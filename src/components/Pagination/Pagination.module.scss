@@ -1,0 +1,25 @@
+@import "../../scss/color.scss";
+
+.listPagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  li {
+    color: $color-text;
+    width: 40px;
+    height: 40px;
+    background: $color-description;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .active {
+    background-color: $active-btn-color;
+  }
+}

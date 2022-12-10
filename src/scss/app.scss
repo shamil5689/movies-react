@@ -1,0 +1,126 @@
+@import "./normalize.scss";
+@import "./color.scss";
+@import "./fonts.scss";
+
+body {
+  background-color: $bg-color;
+  list-style: none;
+}
+*::-webkit-scrollbar {
+  width: 9px; /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  background: $bg-color; /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $btn-color; /* цвет бегунка */
+  border-radius: 20px; /* округлось бегунка */
+  border: 3px solid $color-text; /* отступ вокруг бегунка */
+}
+.swiper-wrapper {
+  margin-bottom: 30px;
+}
+.swiper-pagination-bullet-active {
+  background-color: $color-text !important;
+}
+
+.heading {
+  color: $color-text;
+  font-size: 42px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  @media (max-width: 650px) {
+    font-size: 24px;
+  }
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1145px;
+}
+.container-movies {
+  padding: 0 40px;
+}
+
+.green {
+  border: 1px solid green;
+}
+.orange {
+  border: 1px solid orange;
+}
+.red {
+  border: 1px solid red;
+}
+.raiting {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.raiting > *:before {
+  content: attr(data-label);
+  display: inline-block;
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+.r:not(:last-child) {
+  margin-right: 15px;
+}
+
+.r-kp::before {
+  box-shadow: inset 0 0 0 3px #ab6436;
+  margin-right: 15px;
+}
+
+.r-imdb::before {
+  box-shadow: inset 0 0 0 3px #ccad34;
+}
+.list {
+  display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: repeat(4, 1fr);
+  gap: 20px 20px;
+  // grid-template-areas:
+  //   ". . . ."
+  //   ". . . ."
+  //   ". . . ."
+  //   ". . . ."
+  //   ". . . .";
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  justify-items: center;
+  margin-bottom: 40px;
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 1060px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 730px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 20px;
+  }
+}
+.button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  &:hover {
+    color: $color-text;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../scss/color.scss";
+
+.youtubeWrapper {
+  margin-bottom: 40px;
+}
+.linkWrapper {
+  display: block !important;
+  max-width: 642px !important;
+  margin: 0 auto !important;
+  background: radial-gradient(black, transparent);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 359px;
+  color: $color-text;
+  padding: 20px;
+  text-align: center;
+
+  img {
+    height: 360px;
+  }
+}
+.youtubeComponents {
+  display: flex;
+  justify-content: center;
+}

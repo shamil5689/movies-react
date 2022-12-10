@@ -1,0 +1,21 @@
+@import "../../scss/color.scss";
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: unset;
+  li {
+    list-style: inside;
+    color: $color-text;
+    div {
+      a {
+        color: $color-text;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

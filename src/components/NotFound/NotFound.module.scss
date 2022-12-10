@@ -1,0 +1,16 @@
+@import "../../scss/color.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50vh;
+  .description {
+    font-size: 38px;
+    color: $color-text;
+    @media (max-width: 730px) {
+      font-size: 28px;
+    }
+  }
+}

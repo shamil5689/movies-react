@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Home from "./pages/Home";
+import "./scss/app.scss";
+import { Routes, Route } from "react-router-dom";
+import Layouts from "./Layouts";
+import React, { Suspense } from "react";
+const MovieDetails = React.lazy(() => import("./components/MovieDetails"));
+const Favorites = React.lazy(() => import("./pages/Favorites"));
+const NotFound = React.lazy(() => import("./components/NotFound"));
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layouts />}>
+        <Route path="" element={<Home />} />
+        <Route
+          path="movie/:id"
+          element={
+            <Suspense>
+              <MovieDetails />
+            </Suspense>
+          }
+        />
+        <Route
+          path="favorites"
+          element={
+            <Suspense>
+              <Favorites />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense>
+              <NotFound />
+            </Suspense>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
 

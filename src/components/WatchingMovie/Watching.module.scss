@@ -1,0 +1,15 @@
+.iframe {
+  display: flex;
+  margin: auto;
+  max-width: 100%;
+}
+.containerWatching {
+  padding: 0 50px;
+}
+.watchingWrapper {
+  position: relative;
+}
+.iframe {
+  z-index: 999;
+  position: relative;
+}

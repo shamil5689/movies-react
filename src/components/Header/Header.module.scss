@@ -1,0 +1,51 @@
+@import "../Header/../../scss/color.scss";
+
+.header {
+  height: 145px;
+  .headerContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: $color-text;
+    @media (max-width: 650px) {
+      margin-bottom: 20px;
+    }
+  }
+  .link {
+    color: $color-text;
+  }
+  .favorites {
+    font-weight: 300;
+    font-size: 16px;
+    color: $color-text;
+    @media (max-width: 650px) {
+      margin-bottom: 20px;
+    }
+  }
+  .input {
+    font-family: "montserrat", sans-serif;
+    font-weight: 300;
+    background-color: transparent;
+    padding: 10px 40px 10px 10px;
+    border-radius: 50px;
+    color: $color-text;
+  }
+}
+.root {
+  position: relative;
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    fill: $color-text;
+  }
+}
